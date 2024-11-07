@@ -1,0 +1,23 @@
+<div>
+  <h1 class="title">Access req page</h1>
+  @if(loading) {
+  <p>loading...</p>
+  } @else {
+  <table>
+    <tr>
+      <th>aircraft</th>
+      <th>module</th>
+      <th>access</th>
+    </tr>
+    <tbody>
+      @for(permission of data; track permission._id) {
+      <tr>
+        <td>{{ permission.aircraft }}</td>
+        <td>{{ permission.module }}</td>
+        <td>{{ permission.access === 0 ? "read" : "read write" }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>
